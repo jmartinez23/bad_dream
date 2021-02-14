@@ -45,3 +45,8 @@ ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
 
+# ============ #
+# Workflow     #
+# ============ #
+[Ee]xternal/[Uu]ntracked/
+*.blend?
