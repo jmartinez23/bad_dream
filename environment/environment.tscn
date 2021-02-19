@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://environment/floor/floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/wall/wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/doll_house/doll_house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/blox/blox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/train/train.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/spinning_top/spinning_top.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/clock/clock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/bat/bat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environment/drawers/drawers.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/firetruck/firetruck.tscn" type="PackedScene" id=10]
+[ext_resource path="res://environment/hearse/hearse.tscn" type="PackedScene" id=11]
+[ext_resource path="res://environment/stool/stool.tscn" type="PackedScene" id=12]
+[ext_resource path="res://environment/arches/arches.tscn" type="PackedScene" id=13]
+[ext_resource path="res://environment/doll_arm/doll_arm.tscn" type="PackedScene" id=14]
+[ext_resource path="res://environment/robot/robot.tscn" type="PackedScene" id=15]
+
+[node name="Environment" type="Spatial"]
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 35.3, 0, -0.227 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 35, 0, -0.2 )
+
+[node name="Blox" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.951057, 0, 0.309017, 0, 1, 0, -0.309017, 0, -0.951057, -7, 0, -8.4 )
+
+[node name="DollHouse" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 8.75, 0, -22.25 )
+
+[node name="Train" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -1.85, 0, -15.75 )
+
+[node name="SpinningTop" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1.62028e-07, -1.70298e-08, 1, -0.104528, 0.994522, 0, -0.994522, -0.104528, -1.62921e-07, 5.5, 0, -3 )
+
+[node name="Clock" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 18.25, 0, 10.5 )
+
+[node name="Bat" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.707107, 0.0861746, 0.701836, 0, 0.992546, -0.121869, -0.707107, 0.0861746, 0.701836, 4.75, 0, 28.25 )
+
+[node name="Drawers" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 25, 0, 4.3 )
+
+[node name="Firetruck" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0, 21 )
+
+[node name="Hearse" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.819152, -2.66914e-07, 0.573576, -3.25841e-07, -1, 0, 0.573576, -1.86895e-07, -0.819152, 8, 1.85, 8.25 )
+
+[node name="Stool" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -14.25, 0, 5.5 )
+
+[node name="Arches" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 13 )
+
+[node name="DollArm" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -21.5, 0, -5.5 )
+
+[node name="Robot" parent="." instance=ExtResource( 15 )]
+transform = Transform( -0.665882, 0, 0.746057, 0, 1, 0, -0.746057, 0, -0.665882, 12, 0, -8.35 )

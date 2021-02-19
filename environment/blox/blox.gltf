@@ -81,35 +81,35 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 20517,
+            "count" : 20520,
             "max" : [
-                317.08721923828125,
-                -94.226318359375,
-                0
+                508.067138671875,
+                547.9782104492188,
+                -0.00010462640057085082
             ],
             "min" : [
-                -310.0000305175781,
-                -928.9832153320312,
-                -181.18069458007812
+                -119.02011108398438,
+                -286.7786865234375,
+                -181.18080139160156
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 20517,
+            "count" : 20520,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 20517,
+            "count" : 20520,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 20517,
+            "count" : 20520,
             "type" : "VEC2"
         },
         {
@@ -122,33 +122,33 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 246204,
+            "byteLength" : 246240,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 246204,
-            "byteOffset" : 246204
+            "byteLength" : 246240,
+            "byteOffset" : 246240
         },
         {
             "buffer" : 0,
-            "byteLength" : 164136,
-            "byteOffset" : 492408
+            "byteLength" : 164160,
+            "byteOffset" : 492480
         },
         {
             "buffer" : 0,
-            "byteLength" : 164136,
-            "byteOffset" : 656544
+            "byteLength" : 164160,
+            "byteOffset" : 656640
         },
         {
             "buffer" : 0,
             "byteLength" : 63624,
-            "byteOffset" : 820680
+            "byteOffset" : 820800
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 884304,
+            "byteLength" : 884424,
             "uri" : "blox.bin"
         }
     ]
