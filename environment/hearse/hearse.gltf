@@ -1,0 +1,179 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Hearse",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "hearse_material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0.7171573042869568
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3,
+                        "COLOR_0" : 4
+                    },
+                    "indices" : 5,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "hearse_normals",
+            "uri" : "textures/hearse_normals.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "hearse_diffuse",
+            "uri" : "textures/hearse_diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7646,
+            "max" : [
+                102.79621887207031,
+                324.2380676269531,
+                4.348754737293348e-05
+            ],
+            "min" : [
+                -102.79621887207031,
+                -324.2380676269531,
+                -186.87110900878906
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7646,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7646,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 7646,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 7646,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 8478,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 91752,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 91752,
+            "byteOffset" : 91752
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 61168,
+            "byteOffset" : 183504
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 61168,
+            "byteOffset" : 244672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 122336,
+            "byteOffset" : 305840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16956,
+            "byteOffset" : 428176
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 445132,
+            "uri" : "hearse.bin"
+        }
+    ]
+}

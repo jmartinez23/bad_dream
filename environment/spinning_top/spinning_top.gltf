@@ -1,0 +1,167 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "SpinningTop",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "spinning_top_material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0.858578622341156
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "spinning_top_normals",
+            "uri" : "textures/spinning_top_normals.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "spinning_top_diffuse",
+            "uri" : "textures/spinning_top_diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1568,
+            "max" : [
+                34.399322509765625,
+                -1297.49609375,
+                -0.159271240234375
+            ],
+            "min" : [
+                -100.39217376708984,
+                -1452.52197265625,
+                -147.80194091796875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1568,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1568,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1568,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 2256,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 18816,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18816,
+            "byteOffset" : 18816
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12544,
+            "byteOffset" : 37632
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12544,
+            "byteOffset" : 50176
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4512,
+            "byteOffset" : 62720
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 67232,
+            "uri" : "spinning_top.bin"
+        }
+    ]
+}

@@ -1,0 +1,282 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Wall",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Stars",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "wall_material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0.858578622341156
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.0021246150135993958,
+                0.5209956169128418,
+                0
+            ],
+            "name" : "star_material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8352941870689392,
+                    1,
+                    0.5176470875740051,
+                    1
+                ],
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0.858578622341156
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Mesh.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7,
+                        "TEXCOORD_1" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "wall_normals",
+            "uri" : "textures/wall_normals.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "wall_diffuse",
+            "uri" : "textures/wall_diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1095,
+            "max" : [
+                4941.87158203125,
+                72.7421875,
+                3.433213233947754
+            ],
+            "min" : [
+                -282.92962646484375,
+                -4941.87255859375,
+                -4161.3056640625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1095,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1095,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1095,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 3168,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 1760,
+            "max" : [
+                4823.857421875,
+                42.344749450683594,
+                -463.11578369140625
+            ],
+            "min" : [
+                -41.0417366027832,
+                -4832.98291015625,
+                -3459.12744140625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 1760,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 1760,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1760,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 4488,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 13140,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13140,
+            "byteOffset" : 13140
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8760,
+            "byteOffset" : 26280
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8760,
+            "byteOffset" : 35040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6336,
+            "byteOffset" : 43800
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21120,
+            "byteOffset" : 50136
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21120,
+            "byteOffset" : 71256
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14080,
+            "byteOffset" : 92376
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14080,
+            "byteOffset" : 106456
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8976,
+            "byteOffset" : 120536
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 129512,
+            "uri" : "wall.bin"
+        }
+    ]
+}

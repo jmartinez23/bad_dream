@@ -1,0 +1,172 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Stool",
+            "rotation" : [
+                0.6272113919258118,
+                0.326505571603775,
+                -0.326505571603775,
+                0.6272113919258118
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation" : [
+                2.3979272842407227,
+                0,
+                4.6063761711120605
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "stool_material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0.7171573042869568
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "stool_normals",
+            "uri" : "textures/stool_normals.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "stool_diffuse",
+            "uri" : "textures/stool_diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 2250,
+            "max" : [
+                908.7911376953125,
+                346.45648193359375,
+                -0.40444010496139526
+            ],
+            "min" : [
+                215.87820434570312,
+                -346.4564514160156,
+                -556.1420288085938
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 2250,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 2250,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 2250,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 11274,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 27000,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 27000,
+            "byteOffset" : 27000
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18000,
+            "byteOffset" : 54000
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18000,
+            "byteOffset" : 72000
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 22548,
+            "byteOffset" : 90000
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 112548,
+            "uri" : "stool.bin"
+        }
+    ]
+}

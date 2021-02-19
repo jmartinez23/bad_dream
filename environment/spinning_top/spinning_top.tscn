@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/spinning_top/spinning_top.gltf" type="PackedScene" id=1]
+
+[node name="SpinningTop" instance=ExtResource( 1 )]
