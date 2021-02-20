@@ -9,17 +9,18 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.925342, 0.379133, 0, -0.379133, 0.925342, 0, 2.13807, 5.35226 )
+transform = Transform( 0.149967, 0.374845, -0.914878, 0, 0.925342, 0.379133, 0.988691, -0.0568573, 0.13877, -2.07959, 2.13807, 2.41881 )
 
 [node name="Hellephant" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 3.21214, 0, 1.61615 )
 
 [node name="Zombear" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.946525, 0, -0.322629, 0, 1, 0, 0.322629, 0, 0.946525, 2.72843, 0, 0.997736 )
+transform = Transform( -0.177033, 0, -0.984204, 0, 1, 0, 0.984204, 0, -0.177033, 2.63486, 0, 4.46336 )
 
 [node name="Zombunny" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.892798, 0, 0.450457, 0, 1, 0, -0.450457, 0, 0.892798, -1.39607, 0, 1.64144 )
+transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1.3799, 0, 0.482033 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49626, 0, 2.35175 )
+transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 1.11138, 0, 3.44818 )
 
 [node name="Environment" parent="." instance=ExtResource( 5 )]
