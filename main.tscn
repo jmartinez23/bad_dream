@@ -26,7 +26,6 @@ transform = Transform( -0.177033, 0, -0.984204, 0, 1, 0, 0.984204, 0, -0.177033,
 transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1.3799, 0, 0.482033 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 camera = NodePath("../CameraRig/Camera")
 
 [node name="RemoteTransform" type="RemoteTransform" parent="Player"]
