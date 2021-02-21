@@ -8,8 +8,13 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.149967, 0.374845, -0.914878, 0, 0.925342, 0.379133, 0.988691, -0.0568573, 0.13877, -2.07959, 2.13807, 2.41881 )
+[node name="CameraRig" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="CameraRig"]
+transform = Transform( -0.0353181, 0.499688, -0.865485, 0, 0.866025, 0.5, 0.999376, 0.0176591, -0.0305864, -22, 15, 1 )
+projection = 1
+fov = 20.0
+size = 8.0
 
 [node name="Hellephant" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 3.21214, 0, 1.61615 )
@@ -21,6 +26,20 @@ transform = Transform( -0.177033, 0, -0.984204, 0, 1, 0, 0.984204, 0, -0.177033,
 transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1.3799, 0, 0.482033 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 1.11138, 0, 3.44818 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+camera = NodePath("../CameraRig/Camera")
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Player"]
+transform = Transform( 1, 0, 7.45058e-08, 0, 1, 0, -7.45058e-08, 0, 1, 0, 0, 0 )
+remote_path = NodePath("../../CameraRig")
+update_rotation = false
+update_scale = false
 
 [node name="Environment" parent="." instance=ExtResource( 5 )]
+
+[node name="StaticBody" parent="Environment/Floor" index="3"]
+collision_layer = 3
+
+[editable path="Environment"]
+
+[editable path="Environment/Floor"]
