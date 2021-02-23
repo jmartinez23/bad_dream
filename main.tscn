@@ -27,7 +27,9 @@ transform = Transform( -0.177033, 0, -0.984204, 0, 1, 0, 0.984204, 0, -0.177033,
 transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1.3799, 0, 0.482033 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-camera = NodePath("../CameraRig/Camera")
+camera_path = NodePath("../CameraRig/Camera")
+move_joystick_path = NodePath("../Controller/JoystickLeft")
+aim_joystick_path = NodePath("../Controller/JoystickRight")
 
 [node name="RemoteTransform" type="RemoteTransform" parent="Player"]
 transform = Transform( 1, 0, 7.45058e-08, 0, 1, 0, -7.45058e-08, 0, 1, 0, 0, 0 )
@@ -44,9 +46,11 @@ collision_layer = 3
 
 [node name="JoystickLeft" parent="Controller" index="0"]
 joystick_mode = 2
+visibility_mode = 1
 
 [node name="JoystickRight" parent="Controller" index="1"]
 joystick_mode = 2
+visibility_mode = 1
 
 [editable path="Environment"]
 

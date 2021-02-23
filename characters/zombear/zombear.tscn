@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://characters/zombear/zombear.gltf" type="PackedScene" id=1]
 [ext_resource path="res://characters/zombunny/idle.anim" type="Animation" id=2]
 [ext_resource path="res://characters/zombunny/death.anim" type="Animation" id=3]
 [ext_resource path="res://characters/zombunny/move.anim" type="Animation" id=4]
+[ext_resource path="res://characters/enemy_animation_node_state_machine.tres" type="AnimationNodeStateMachine" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.35
+height = 0.7
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="Zombear" instance=ExtResource( 1 )]
 
@@ -11,3 +18,13 @@
 anims/death = ExtResource( 3 )
 anims/idle = ExtResource( 2 )
 anims/move = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.60241, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = ExtResource( 5 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 2 )

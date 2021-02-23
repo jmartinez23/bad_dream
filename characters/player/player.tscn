@@ -16,47 +16,47 @@ animation = "idle"
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "move"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "to_idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
-[sub_resource type="AnimationNodeStateMachine" id=9]
+[sub_resource type="AnimationNodeStateMachine" id=12]
 states/death/node = SubResource( 2 )
 states/death/position = Vector2( 257, 61 )
 states/idle/node = SubResource( 3 )
 states/idle/position = Vector2( 412, 61 )
 states/move/node = SubResource( 4 )
 states/move/position = Vector2( 412, 147 )
-states/to_idle/node = SubResource( 11 )
+states/to_idle/node = SubResource( 5 )
 states/to_idle/position = Vector2( 552, 79 )
-transitions = [ "idle", "move", SubResource( 5 ), "idle", "death", SubResource( 7 ), "move", "death", SubResource( 8 ), "move", "to_idle", SubResource( 12 ), "to_idle", "idle", SubResource( 13 ), "to_idle", "move", SubResource( 14 ) ]
+transitions = [ "idle", "move", SubResource( 6 ), "idle", "death", SubResource( 7 ), "move", "death", SubResource( 8 ), "move", "to_idle", SubResource( 9 ), "to_idle", "idle", SubResource( 10 ), "to_idle", "move", SubResource( 11 ) ]
 start_node = "to_idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 0.65, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.65, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 13 )
