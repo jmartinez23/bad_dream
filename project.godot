@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "Joystick",
+"language": "GDScript",
+"path": "res://controller/joystick/joystick.gd"
+}, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://characters/player/player.gd"
 } ]
 _global_script_class_icons={
+"Joystick": "",
 "Player": ""
 }
 
@@ -28,6 +34,8 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
+window/size/borderless=true
+window/size/fullscreen=true
 
 [input]
 
@@ -59,3 +67,7 @@ ui_down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
