@@ -7,22 +7,38 @@
 [node name="JoystickLeft" parent="." instance=ExtResource( 1 )]
 clamp_zone = 2.0
 
+[node name="DetectionZone" parent="JoystickLeft/DetectionZoneLayoutControl" index="0"]
+custom_constants/margin_right = 128
+custom_constants/margin_top = 128
+custom_constants/margin_left = 128
+custom_constants/margin_bottom = 128
+
+[node name="BackgroundLayoutControl" parent="JoystickLeft/DetectionZoneLayoutControl/DetectionZone" index="0"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 832.0
+margin_bottom = 952.0
+
 [node name="JoystickRight" parent="." instance=ExtResource( 1 )]
 
-[node name="DetectionZone" parent="JoystickRight/MovementBounds" index="0"]
+[node name="DetectionZone" parent="JoystickRight/DetectionZoneLayoutControl" index="0"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -713.0
-margin_right = -31.0
-rect_min_size = Vector2( 640, 640 )
-custom_constants/margin_right = 192
-custom_constants/margin_left = 0
+margin_left = -960.0
+margin_right = 0.0
+grow_horizontal = 0
+custom_constants/margin_right = 128
+custom_constants/margin_top = 128
+custom_constants/margin_left = 128
+custom_constants/margin_bottom = 128
 
-[node name="IdleZone" parent="JoystickRight/MovementBounds/DetectionZone" index="0"]
-margin_left = 0.0
-margin_right = 490.0
+[node name="BackgroundLayoutControl" parent="JoystickRight/DetectionZoneLayoutControl/DetectionZone" index="0"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 832.0
+margin_bottom = 952.0
 
-[node name="Background" parent="JoystickRight/MovementBounds/DetectionZone/IdleZone" index="0"]
+[node name="Background" parent="JoystickRight/DetectionZoneLayoutControl/DetectionZone/BackgroundLayoutControl" index="0"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -256.0

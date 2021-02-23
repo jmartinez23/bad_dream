@@ -55,10 +55,9 @@ enum VisibilityMode {ALWAYS , TOUCHSCREEN_ONLY }
 
 export(VisibilityMode) var visibility_mode := VisibilityMode.ALWAYS
 
-onready var _movement_bounds = $MovementBounds
-onready var _detection_zone = $MovementBounds/DetectionZone
-onready var _background := $MovementBounds/DetectionZone/IdleZone/Background
-onready var _handle := $MovementBounds/DetectionZone/IdleZone/Background/Handle
+onready var _detection_zone = $DetectionZoneLayoutControl/DetectionZone
+onready var _background := $DetectionZoneLayoutControl/DetectionZone/BackgroundLayoutControl/Background
+onready var _handle := $DetectionZoneLayoutControl/DetectionZone/BackgroundLayoutControl/Background/Handle
 onready var _original_color : Color = _handle.self_modulate
 onready var _original_position : Vector2 = _background.rect_position
 
@@ -144,9 +143,9 @@ func _following(vector: Vector2):
 		var radius := vector.normalized() * clamp_size
 		var delta := vector - radius
 		var new_pos :Vector2 = _background.rect_position + delta
-		new_pos.x = clamp(new_pos.x, -_background.rect_size.x / 2, rect_size.x - _background.rect_size.x / 2)
-		new_pos.y = clamp(new_pos.y, -_background.rect_size.y / 2, rect_size.y - _background.rect_size.y / 2)
-		_background.rect_position = new_pos
+		#new_pos.x = clamp(new_pos.x, -_background.rect_size.x / 2, rect_size.x - _background.rect_size.x / 2)
+		#new_pos.y = clamp(new_pos.y, -_background.rect_size.y / 2, rect_size.y - _background.rect_size.y / 2)
+		_background.rect_position = new_pos		
 
 func _directional_vector(vector: Vector2, n_directions: int, _symmetry_angle := PI/2) -> Vector2:
 	var angle := (vector.angle() + _symmetry_angle) / (PI / n_directions)
