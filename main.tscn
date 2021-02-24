@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -8,16 +8,12 @@
 [ext_resource path="res://controller/controller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://health_ui/health_bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://audio/background_music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://camera/camera_rig.tscn" type="PackedScene" id=9]
 
 [node name="Spatial" type="Spatial"]
 
-[node name="CameraRig" type="Spatial" parent="."]
-
-[node name="Camera" type="Camera" parent="CameraRig"]
-transform = Transform( -0.0353181, 0.499688, -0.865485, 0, 0.866025, 0.5, 0.999376, 0.0176591, -0.0305864, -22, 15, 1 )
-projection = 1
-fov = 20.0
-size = 8.0
+[node name="CameraRig" parent="." instance=ExtResource( 9 )]
+damp_time = 0.35
 
 [node name="Hellephant" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 3.21214, 0, 1.61615 )
@@ -32,12 +28,6 @@ transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1
 camera_path = NodePath("../CameraRig/Camera")
 move_joystick_path = NodePath("../Controller/JoystickLeft")
 aim_joystick_path = NodePath("../Controller/JoystickRight")
-
-[node name="RemoteTransform" type="RemoteTransform" parent="Player"]
-transform = Transform( 1, 0, 7.45058e-08, 0, 1, 0, -7.45058e-08, 0, 1, 0, 0, 0 )
-remote_path = NodePath("../../CameraRig")
-update_rotation = false
-update_scale = false
 
 [node name="Environment" parent="." instance=ExtResource( 5 )]
 

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://camera/camera_rig.gd" type="Script" id=1]
+
+[node name="CameraRig" type="Spatial"]
+script = ExtResource( 1 )
+target_path = NodePath("../Player")
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.0353181, 0.499688, -0.865485, 0, 0.866025, 0.5, 0.999376, 0.0176591, -0.0305864, -22, 15, 1 )
+projection = 1
+fov = 20.0
+size = 8.0
+
+[node name="Tween" type="Tween" parent="."]
