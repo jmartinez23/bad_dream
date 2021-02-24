@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://environment/environment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://controller/controller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://health_ui/health_bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://audio/background_music.ogg" type="AudioStream" id=8]
 
 [node name="Spatial" type="Spatial"]
 
@@ -54,6 +55,9 @@ joystick_mode = 2
 visibility_mode = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [editable path="Environment"]
 
