@@ -1,13 +1,15 @@
 [gd_resource type="AnimationNodeStateMachine" load_steps=8 format=2]
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=1]
 animation = "death"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=4]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=5]
 
@@ -15,14 +17,12 @@ animation = "move"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
-
 [resource]
-states/death/node = SubResource( 2 )
+states/death/node = SubResource( 1 )
 states/death/position = Vector2( 269, 103 )
-states/idle/node = SubResource( 3 )
+states/idle/node = SubResource( 2 )
 states/idle/position = Vector2( 469, 118 )
-states/move/node = SubResource( 4 )
+states/move/node = SubResource( 3 )
 states/move/position = Vector2( 469, 211 )
-transitions = [ "idle", "move", SubResource( 5 ), "move", "idle", SubResource( 6 ), "idle", "death", SubResource( 7 ), "move", "death", SubResource( 8 ) ]
+transitions = [ "idle", "move", SubResource( 4 ), "move", "idle", SubResource( 5 ), "idle", "death", SubResource( 6 ), "move", "death", SubResource( 7 ) ]
 start_node = "idle"

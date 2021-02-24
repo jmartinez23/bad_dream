@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GIProbeData" id=1]
+
+[node name="Lights" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.43787, -0.895436, -0.0804044, -0.84196, 0.377068, 0.385906, -0.315236, 0.236674, -0.919028, -5.8, 10, 3.4 )
+light_color = Color( 0.764706, 0.721569, 1, 1 )
+light_energy = 0.27
+directional_shadow_mode = 0
+
+[node name="GIProbe" type="GIProbe" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 1.25, 0 )
+extents = Vector3( 25, 5, 25 )
+data = SubResource( 1 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+extents = Vector3( 37, 20, 37 )
+origin_offset = Vector3( 0, 10, 0 )
+enable_shadows = true
