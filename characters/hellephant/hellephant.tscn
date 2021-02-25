@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.gltf" type="PackedScene" id=1]
 [ext_resource path="res://audio/hellephant_hurt.wav" type="AudioStream" id=2]
+[ext_resource path="res://characters/health.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 1.2
@@ -36,6 +37,11 @@ start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
+[sub_resource type="CapsuleShape" id=11]
+resource_local_to_scene = true
+radius = 1.24967
+height = 0.25
+
 [node name="Hellephant" instance=ExtResource( 1 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
@@ -51,3 +57,11 @@ parameters/playback = SubResource( 10 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435585, 1.10416 )
 stream = ExtResource( 2 )
+
+[node name="Health" parent="." index="5" instance=ExtResource( 3 )]
+
+[node name="CollisionShape" parent="Health" index="0"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.4, 0 )
+shape = SubResource( 11 )
+
+[editable path="Health"]

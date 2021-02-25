@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://health_ui/health_bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://audio/background_music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://camera/camera_rig.tscn" type="PackedScene" id=9]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="Spatial" type="Spatial"]
 
@@ -29,6 +31,12 @@ camera_path = NodePath("../CameraRig/Camera")
 move_joystick_path = NodePath("../Controller/JoystickLeft")
 aim_joystick_path = NodePath("../Controller/JoystickRight")
 
+[node name="AnimationTree" parent="Player" index="3"]
+parameters/playback = SubResource( 1 )
+
+[node name="Health" parent="Player" index="6"]
+health = 150
+
 [node name="Environment" parent="." instance=ExtResource( 5 )]
 
 [node name="StaticBody" parent="Environment/Floor" index="3"]
@@ -45,9 +53,14 @@ joystick_mode = 2
 visibility_mode = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 7 )]
+player_health_path = NodePath("../Player/Health")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+[connection signal="health_changed" from="Player/Health" to="HealthBar" method="_on_player_health_changed"]
+[connection signal="max_health_changed" from="Player/Health" to="HealthBar" method="_on_player_max_health_changed"]
+
+[editable path="Player"]
 
 [editable path="Environment"]
 
