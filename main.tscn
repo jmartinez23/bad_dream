@@ -34,9 +34,6 @@ aim_joystick_path = NodePath("../Controller/JoystickRight")
 [node name="AnimationTree" parent="Player" index="3"]
 parameters/playback = SubResource( 1 )
 
-[node name="Health" parent="Player" index="6"]
-health = 150
-
 [node name="Environment" parent="." instance=ExtResource( 5 )]
 
 [node name="StaticBody" parent="Environment/Floor" index="3"]
