@@ -1,5 +1,6 @@
 # 01. tool
 # 02. class_name
+class_name CharacterAudioPlayer
 # 03. extends
 extends AudioStreamPlayer3D
 
@@ -21,11 +22,11 @@ export (AudioStream) var death_sound
 # 14. remaining built-in virtual methods
 # 15. public methods
 # 16. private methods
-func _on_health_changed():
+func _on_Health_health_changed():
 	stream = hurt_sound
 	play()
 
-func _on_health_depleted():
+func _on_Health_health_depleted():
 	yield(self, "finished") 
 	stream = death_sound
 	play()

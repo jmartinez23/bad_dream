@@ -7,7 +7,7 @@
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.43787, -0.895436, -0.0804044, -0.84196, 0.377068, 0.385906, -0.315236, 0.236674, -0.919028, -5.8, 10, 3.4 )
 light_color = Color( 0.764706, 0.721569, 1, 1 )
-light_energy = 0.27
+light_energy = 0.3
 directional_shadow_mode = 0
 
 [node name="GIProbe" type="GIProbe" parent="."]

@@ -36,6 +36,9 @@ parameters/playback = SubResource( 1 )
 
 [node name="Environment" parent="." instance=ExtResource( 5 )]
 
+[node name="DirectionalLight" parent="Environment" index="1"]
+visible = false
+
 [node name="StaticBody" parent="Environment/Floor" index="3"]
 collision_layer = 3
 
@@ -60,6 +63,8 @@ stream = ExtResource( 8 )
 [editable path="Player"]
 
 [editable path="Environment"]
+
+[editable path="Environment/Lights"]
 
 [editable path="Environment/Floor"]
 

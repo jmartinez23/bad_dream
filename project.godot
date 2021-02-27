@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://camera/camera_rig.gd"
 }, {
+"base": "AudioStreamPlayer3D",
+"class": "CharacterAudioPlayer",
+"language": "GDScript",
+"path": "res://characters/character_audio_player.gd"
+}, {
+"base": "Spatial",
+"class": "GunBarrelEnd",
+"language": "GDScript",
+"path": "res://characters/player/gun_barrel_end.gd"
+}, {
 "base": "Area",
 "class": "Health",
 "language": "GDScript",
@@ -31,6 +41,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CameraRig": "",
+"CharacterAudioPlayer": "",
+"GunBarrelEnd": "",
 "Health": "",
 "Joystick": "",
 "Player": ""
