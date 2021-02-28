@@ -55,8 +55,9 @@ visibility_mode = 1
 [node name="HealthBar" parent="." instance=ExtResource( 7 )]
 player_health_path = NodePath("../Player/Health")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -21.0
 [connection signal="health_changed" from="Player/Health" to="HealthBar" method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player/Health" to="HealthBar" method="_on_player_max_health_changed"]
 

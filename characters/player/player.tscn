@@ -34,7 +34,7 @@ animation = "to_idle"
 switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
-switch_mode = 1
+switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=11]

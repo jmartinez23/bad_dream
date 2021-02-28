@@ -53,8 +53,9 @@ script = ExtResource( 2 )
 
 [node name="BarrelLight" type="OmniLight" parent="."]
 light_color = Color( 1, 0.678431, 0, 1 )
-light_energy = 6.0
+light_energy = 5.0
 shadow_enabled = true
+omni_range = 10.0
 
 [node name="BulletRay" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -0.5 )
@@ -64,11 +65,12 @@ material/0 = null
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )
+unit_db = 24.0
 
 [node name="ShowTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.03
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.15
 [connection signal="timeout" from="ShowTimer" to="." method="_on_ShowTimer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
