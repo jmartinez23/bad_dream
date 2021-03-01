@@ -19,16 +19,25 @@ onready var bullet_ray: MeshInstance = $BulletRay
 onready var audio_stream_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 onready var show_timer: Timer = $ShowTimer
 onready var shoot_timer: Timer = $ShootTimer
+onready var ray_cast: RayCast = $RayCast
 
 # 12. optional built-in virtual _init method
 # 13. built-in virtual _ready method
 # 14. remaining built-in virtual methods
+func _physics_process(delta):
+	pass
+
+
 # 15. public methods
-func shoot(length: float):
+func shoot() -> PhysicsBody:
+	var collider: Object = null
 	if _can_shoot:
 		_can_shoot = false
+		ray_cast.enabled = true
+		ray_cast.force_raycast_update()
+		var target: Vector3 = ray_cast.get_collision_point()
 		var mesh: CylinderMesh = bullet_ray.mesh
-		mesh.height = length
+		mesh.height = (target - self.global_transform.origin).length()
 		bullet_ray.translation.z = -mesh.height / 2
 		self.visible = true
 		if audio_stream_player.playing:
@@ -36,6 +45,12 @@ func shoot(length: float):
 		audio_stream_player.play()
 		show_timer.start()
 		shoot_timer.start()
+		collider = ray_cast.get_collider()
+		ray_cast.enabled = false
+
+	if collider is PhysicsBody:
+		return collider as PhysicsBody
+	return null
 
 # 16. private methods
 func _on_ShowTimer_timeout():

@@ -55,18 +55,19 @@ func _process(delta):
 		direction.x = Input.get_action_strength("ui_up") -Input.get_action_strength("ui_down")
 		direction.z = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 
+	var shot_collider: PhysicsBody
 	if _aim_joystick.is_visible():
 		if not _aim_joystick.output == Vector2.ZERO:
 			var look_vector: Vector2 = _aim_joystick.output
 			_look_at_point = self.transform.origin + Vector3(-look_vector.y, 0.0, look_vector.x) * 100
 			_look_at_upadte_required = true
-			gun_barrel_end.shoot(10.0)
+			shot_collider = gun_barrel_end.shoot()
 		elif not _move_joystick.output == Vector2.ZERO:
 			var look_vector: Vector2 = _move_joystick.output
 			_look_at_point = self.transform.origin + Vector3(-look_vector.y, 0.0, look_vector.x) * 100
 			_look_at_upadte_required = true
 	elif Input.is_mouse_button_pressed(1):
-		gun_barrel_end.shoot(10.0)
+		shot_collider = gun_barrel_end.shoot()		
 
 	if direction.length() < 0.1:
 		_is_moving = false

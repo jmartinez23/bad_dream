@@ -3,7 +3,7 @@
 class_name Health
 
 # 03. extends
-extends Area
+extends Node
 
 # 04. # docstring
 
