@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://health_ui/health_bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://audio/background_music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://camera/camera_rig.tscn" type="PackedScene" id=9]
+[ext_resource path="res://score_ui/score_ui.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -54,6 +55,10 @@ visibility_mode = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 7 )]
 player_health_path = NodePath("../Player/Health")
+
+[node name="ScoreUI" parent="." instance=ExtResource( 10 )]
+margin_left = -218.0
+margin_bottom = 192.0
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

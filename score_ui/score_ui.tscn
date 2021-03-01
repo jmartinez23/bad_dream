@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://score_ui/stars.png" type="Texture" id=1]
+[ext_resource path="res://fonts/evil_of_frankenstein.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[node name="Score" type="MarginContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+custom_constants/margin_right = 64
+custom_constants/margin_top = 64
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 64.0
+margin_right = 232.0
+margin_bottom = 192.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_right = 22.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer"]
+margin_top = 35.0
+margin_right = 22.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 26.0
+margin_right = 154.0
+margin_bottom = 128.0
+texture = ExtResource( 1 )
