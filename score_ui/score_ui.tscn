@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://score_ui/stars.png" type="Texture" id=1]
 [ext_resource path="res://fonts/evil_of_frankenstein.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://score_ui/score_ui.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 44
@@ -17,13 +18,14 @@ grow_horizontal = 0
 size_flags_horizontal = 3
 custom_constants/margin_right = 64
 custom_constants/margin_top = 64
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 64.0
-margin_right = 232.0
+margin_right = 154.0
 margin_bottom = 192.0
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]

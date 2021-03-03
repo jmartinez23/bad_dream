@@ -63,6 +63,7 @@ margin_bottom = 192.0
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -21.0
+[connection signal="score_changed" from="Player" to="ScoreUI" method="_on_Player_score_changed"]
 [connection signal="health_changed" from="Player/Health" to="HealthBar" method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player/Health" to="HealthBar" method="_on_player_max_health_changed"]
 

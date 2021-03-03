@@ -4,4 +4,5 @@
 
 [node name="CharacterAudioPlayer" type="AudioStreamPlayer3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+unit_db = 24.0
 script = ExtResource( 1 )

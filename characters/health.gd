@@ -43,6 +43,8 @@ func get_max_health() -> int:
 
 func set_health(value):
 	if value <= 0:
+		if self.health <= 0:
+			return
 		health = 0
 		emit_signal("health_depleted")
 	elif value > max_health:

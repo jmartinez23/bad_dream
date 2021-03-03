@@ -2,6 +2,9 @@ class_name Player
 extends KinematicBody
 # Used to control the Player
 
+# signals
+signal score_changed(score)
+
 # exported variables
 export (float) var speed = 6.0
 export (NodePath) var camera_path
@@ -10,11 +13,13 @@ export (NodePath) var aim_joystick_path
 
 # public variables
 var direction: Vector3 = Vector3.ZERO
+var score: int = 0 setget set_score, get_score
 
 # private variables
 var _is_moving: bool = false
 var _look_at_point: Vector3
 var _look_at_upadte_required: bool = false
+
 
 # onready variables
 onready var _camera: Camera = get_node(camera_path)
@@ -67,7 +72,11 @@ func _process(delta):
 			_look_at_point = self.transform.origin + Vector3(-look_vector.y, 0.0, look_vector.x) * 100
 			_look_at_upadte_required = true
 	elif Input.is_mouse_button_pressed(1):
-		shot_collider = gun_barrel_end.shoot()		
+		shot_collider = gun_barrel_end.shoot()
+
+	if shot_collider is Enemy:
+		shot_collider.hurt(10)
+		shot_collider.connect("died", self,  "_on_Enemy_died")
 
 	if direction.length() < 0.1:
 		_is_moving = false
@@ -103,3 +112,16 @@ func _update_barrel_end_position():
 
 	gun_barrel_end.transform.origin = self.to_local(gun_skeleton.to_global(barrel_end_transform.origin))
 	gun_barrel_end.look_at(look_point_global, Vector3.UP)
+
+
+func get_score() -> int:
+	return score
+
+
+func set_score(value: int):
+	score = value
+	emit_signal("score_changed", get_score())
+
+
+func _on_Enemy_died(enemy: Enemy):
+	self.score += enemy.score_value
