@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://environment/spawn_point.gd" type="Script" id=1]
+[ext_resource path="res://characters/zombunny/zombunny.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/zombear/zombear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=4]
+
+[node name="SpawnPoint" type="Spatial"]
+script = ExtResource( 1 )
+enemy_packed_scenes = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

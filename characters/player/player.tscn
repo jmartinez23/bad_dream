@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://characters/player/player.gltf" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.gd" type="Script" id=2]
@@ -34,12 +34,9 @@ animation = "to_idle"
 switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
-switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
-
-[sub_resource type="AnimationNodeStateMachine" id=12]
+[sub_resource type="AnimationNodeStateMachine" id=11]
 states/death/node = SubResource( 2 )
 states/death/position = Vector2( 257, 61 )
 states/idle/node = SubResource( 3 )
@@ -48,10 +45,10 @@ states/move/node = SubResource( 4 )
 states/move/position = Vector2( 412, 147 )
 states/to_idle/node = SubResource( 5 )
 states/to_idle/position = Vector2( 552, 79 )
-transitions = [ "idle", "move", SubResource( 6 ), "idle", "death", SubResource( 7 ), "move", "death", SubResource( 8 ), "move", "to_idle", SubResource( 9 ), "to_idle", "idle", SubResource( 10 ), "to_idle", "move", SubResource( 11 ) ]
+transitions = [ "idle", "move", SubResource( 6 ), "idle", "death", SubResource( 7 ), "move", "death", SubResource( 8 ), "move", "to_idle", SubResource( 9 ), "to_idle", "idle", SubResource( 10 ) ]
 start_node = "to_idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -61,10 +58,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.65, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
-tree_root = SubResource( 12 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 13 )
+parameters/playback = SubResource( 12 )
 
 [node name="CharacterAudioPlayer" parent="." index="4" instance=ExtResource( 4 )]
 hurt_sound = ExtResource( 3 )

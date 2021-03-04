@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/hellephant/hellephant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -10,22 +10,17 @@
 [ext_resource path="res://audio/background_music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://camera/camera_rig.tscn" type="PackedScene" id=9]
 [ext_resource path="res://score_ui/score_ui.tscn" type="PackedScene" id=10]
+[ext_resource path="res://environment/navigation.tscn" type="PackedScene" id=11]
+[ext_resource path="res://environment/spawn_point.tscn" type="PackedScene" id=12]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="Spatial" type="Spatial"]
 
+[node name="Navigation" parent="." instance=ExtResource( 11 )]
+
 [node name="CameraRig" parent="." instance=ExtResource( 9 )]
 damp_time = 0.35
-
-[node name="Hellephant" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.149967, 0, -0.988691, 0, 1, 0, 0.988691, 0, 0.149967, 3.21214, 0, 1.61615 )
-
-[node name="Zombear" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.177033, 0, -0.984204, 0, 1, 0, 0.984204, 0, -0.177033, 2.63486, 0, 4.46336 )
-
-[node name="Zombunny" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.579253, 0, -0.815148, 0, 1, 0, 0.815148, 0, 0.579253, 1.3799, 0, 0.482033 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 camera_path = NodePath("../CameraRig/Camera")
@@ -63,6 +58,16 @@ margin_bottom = 192.0
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -21.0
+
+[node name="SpawnPoint" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 15, 0, 22 )
+enemy_packed_scenes = [ ExtResource( 3 ), ExtResource( 4 ) ]
+spawn_time = 4.0
+
+[node name="SpawnPoint2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -19 )
+enemy_packed_scenes = [ ExtResource( 1 ), ExtResource( 3 ) ]
+spawn_time = 6.0
 [connection signal="score_changed" from="Player" to="ScoreUI" method="_on_Player_score_changed"]
 [connection signal="health_changed" from="Player/Health" to="HealthBar" method="_on_player_health_changed"]
 [connection signal="max_health_changed" from="Player/Health" to="HealthBar" method="_on_player_max_health_changed"]

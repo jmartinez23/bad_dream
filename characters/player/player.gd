@@ -76,7 +76,8 @@ func _process(delta):
 
 	if shot_collider is Enemy:
 		shot_collider.hurt(10)
-		shot_collider.connect("died", self,  "_on_Enemy_died")
+		if not shot_collider.is_connected("died", self,  "_on_Enemy_died"):
+			shot_collider.connect("died", self,  "_on_Enemy_died")
 
 	if direction.length() < 0.1:
 		_is_moving = false

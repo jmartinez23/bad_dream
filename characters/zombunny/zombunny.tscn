@@ -17,8 +17,10 @@ height = 0.7
 
 [node name="Zombunny" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
+speed = 4.0
 score_value = 10
 sink_speed = 0.75
+reach = 1.25
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.577712, 0 )
@@ -46,6 +48,6 @@ omni_range = 3.0
 
 [node name="DeathTimer" parent="." index="7" instance=ExtResource( 8 )]
 [connection signal="health_changed" from="Health" to="CharacterAudioPlayer" method="_on_Health_health_changed"]
-[connection signal="health_depleted" from="Health" to="CharacterAudioPlayer" method="_on_Health_health_depleted"]
 [connection signal="health_depleted" from="Health" to="." method="_on_Health_health_depleted"]
+[connection signal="health_depleted" from="Health" to="CharacterAudioPlayer" method="_on_Health_health_depleted"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
