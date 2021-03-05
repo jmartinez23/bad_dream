@@ -73,3 +73,4 @@ death_sound = ExtResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284957, 0.297322, -0.71497 )
 [connection signal="health_changed" from="Health" to="CharacterAudioPlayer" method="_on_Health_health_changed"]
 [connection signal="health_depleted" from="Health" to="CharacterAudioPlayer" method="_on_Health_health_depleted"]
+[connection signal="health_depleted" from="Health" to="." method="_on_Health_health_depleted"]

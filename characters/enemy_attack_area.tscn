@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/enemy_attack_area.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+
+[node name="AttackArea" type="Area"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99642, 0.806263 )
+shape = SubResource( 1 )
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 1.5
+[connection signal="body_entered" from="." to="." method="_on_AttackArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_AttackArea_body_exited"]

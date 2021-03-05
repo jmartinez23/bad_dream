@@ -1,27 +1,35 @@
+# 01. tool
+# 02. class_name
 class_name Player
+
+# 03. extends / 04. # docstring
 extends KinematicBody
 # Used to control the Player
 
-# signals
+# 05. signals
 signal score_changed(score)
 
-# exported variables
+# 06. enums
+# 07. constants
+# 08. exported variables
 export (float) var speed = 6.0
 export (NodePath) var camera_path
 export (NodePath) var move_joystick_path
 export (NodePath) var aim_joystick_path
 
-# public variables
+# 09. public variables
 var direction: Vector3 = Vector3.ZERO
 var score: int = 0 setget set_score, get_score
 
-# private variables
+# 10. private variables
 var _is_moving: bool = false
 var _look_at_point: Vector3
 var _look_at_upadte_required: bool = false
+var _dead: bool = false
 
 
-# onready variables
+# 11. onready variables
+onready var health: Health = $Health
 onready var _camera: Camera = get_node(camera_path)
 onready var _state_machine: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
 onready var _move_joystick: Joystick = get_node(move_joystick_path)
@@ -29,12 +37,13 @@ onready var _aim_joystick: Joystick = get_node(aim_joystick_path)
 onready var gun_barrel_end = $GunBarrelEnd
 onready var gun_skeleton: Skeleton = $"PlayerControl/ControlGroup/Skeleton 2"
 
-# Built-in virtual _ready method
+# 12. optional built-in virtual _init method
+# 13. built-in virtual _ready method
 func _ready():
 	pass # Replace with function body.
 
 
-# Remaining built-in virutal methods
+# 14. remaining built-in virtual methods
 func _input(event):
 	if not _move_joystick.is_visible():
 		if event is InputEventMouseMotion:
@@ -52,7 +61,8 @@ func _input(event):
 
 
 func _process(delta):
-
+	if _dead: 
+		return
 	if _move_joystick.is_visible():
 		direction.x = -_move_joystick.output.y
 		direction.z = _move_joystick.output.x
@@ -90,6 +100,11 @@ func _process(delta):
 	_update_barrel_end_position()
 
 
+# 15. public methods
+func hurt(damage: int):
+	health.health -= damage
+
+# 16. private methods
 func _physics_process(delta):
 	if _look_at_upadte_required:
 		look_at(_look_at_point, Vector3.UP)
@@ -126,3 +141,8 @@ func set_score(value: int):
 
 func _on_Enemy_died(enemy: Enemy):
 	self.score += enemy.score_value
+
+
+func _on_Health_health_depleted():
+	_dead = true
+	_state_machine.travel("death")
