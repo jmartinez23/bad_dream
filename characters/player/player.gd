@@ -62,6 +62,7 @@ func _input(event):
 
 func _process(delta):
 	if _dead: 
+		move_and_slide(Vector3.ZERO, Vector3.UP)
 		return
 	if _move_joystick.is_visible():
 		direction.x = -_move_joystick.output.y

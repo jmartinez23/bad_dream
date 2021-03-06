@@ -35,6 +35,9 @@ parameters/playback = SubResource( 1 )
 [node name="DirectionalLight" parent="Environment" index="1"]
 visible = false
 
+[node name="Planks" parent="Environment/Floor" index="2"]
+transform = Transform( 0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0, 0 )
+
 [node name="StaticBody" parent="Environment/Floor" index="3"]
 collision_layer = 3
 
