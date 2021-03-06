@@ -33,6 +33,7 @@ onready var health: Health = $Health
 onready var death_timer: Timer = $DeathTimer
 onready var _state_machine: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
 onready var _blood_particles = $BloodParticles
+onready var _attack_area = $AttackArea
 
 # 12. optional built-in virtual _init method
 # 13. built-in virtual _ready method
@@ -70,11 +71,16 @@ func _physics_process(delta):
 func hurt(damage: int, global_position: Vector3 = Vector3.ZERO):
 	health.health -= damage
 	_blood_particles.global_transform.origin = self.global_transform.origin
-	_blood_particles.translate_object_local(Vector3(0.0, 0.5, -0.5))
+	if self.name.match("Hellephant*"):
+		_blood_particles.translate_object_local(Vector3(0.0, 1.0, -1.25))
+	else:
+		_blood_particles.translate_object_local(Vector3(0.0, 0.5, -0.5))
 	_blood_particles.emitting = true
 
 # 16. private methods
 func _on_Health_health_depleted():
+	_attack_area.monitoring = false
+	_attack_area.monitorable = false
 	_state_machine.travel("death")
 	_dead = true
 	emit_signal("died", self)
