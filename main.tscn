@@ -61,6 +61,7 @@ margin_bottom = 192.0
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -21.0
+autoplay = true
 
 [node name="SpawnPoint" parent="." instance=ExtResource( 12 )]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 15, 0, 22 )
